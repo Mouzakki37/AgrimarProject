@@ -1,3 +1,5 @@
+import 'package:agrimarapp/screens/login_screen.dart';
+import 'package:agrimarapp/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,11 +16,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class LoadingScreen extends StatelessWidget {
+ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFE8FEE6),
+      backgroundColor:  const Color(0xFFE8FEE6),
       body: Stack(
         children: [
           // Image en arrière-plan
@@ -35,21 +37,21 @@ class LoadingScreen extends StatelessWidget {
             children: [
               // Zone diagonale contenant le texte
               CustomPaint(
-                size: Size(double.infinity, 180),
+                size: const Size(double.infinity, 180),
                 child: Container(
-                  padding: EdgeInsets.only(left: 20, bottom: 20), // Espace à gauche et en bas
+                  padding: const EdgeInsets.only(left: 20, bottom: 20), // Espace à gauche et en bas
                   child: Text(
                     'Take care of your\nPlants', // Texte sur deux lignes
                     textAlign: TextAlign.right, // Aligner le texte à gauche
                     style: TextStyle(
-                      color: Colors.black,
+                      color: const Color.fromARGB(255, 61, 61, 61),
                       fontSize: 26, // Taille ajustée
                       fontWeight: FontWeight.bold,
                       shadows: [
                         Shadow(
                           blurRadius: 3.0,
                           color: Colors.grey.shade500, // Ombre
-                          offset: Offset(2, 2),
+                          offset: const Offset(2, 2),
                         ),
                       ],
                     ),
@@ -64,39 +66,47 @@ class LoadingScreen extends StatelessWidget {
                     // Bouton Login
                     ElevatedButton(
                       onPressed: () {
-                        // Action pour le bouton Login
+                         // Naviguer vers la page Login
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const LoginScreen()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF16890C),
+                        backgroundColor: const Color(0xFF16890C),
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25),
                         ),
-                        minimumSize: Size(double.infinity, 50),
+                        minimumSize: const Size(double.infinity, 50),
                       ),
-                      child: Text('Log in', style: TextStyle(fontSize: 18)),
+                      child: const Text('Log in', style: TextStyle(fontSize: 18)),
                     ),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     // Bouton Sign Up
                     ElevatedButton(
                       onPressed: () {
-                        // Action pour le bouton Sign Up
+                         // Naviguer vers la page SignUP
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const RegisterScreen()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
-                        foregroundColor: Color(0xFF16890C),
+                        foregroundColor:  const Color(0xFF16890C),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25),
                         ),
-                        side: BorderSide(color: Color(0xFF16890C), width: 2),
-                        minimumSize: Size(double.infinity, 50),
+                        side: const BorderSide(color: Color(0xFF16890C), width: 2),
+                        minimumSize: const Size(double.infinity, 50),
                       ),
-                      child: Text('Sign Up', style: TextStyle(fontSize: 18)),
+                      child: const Text('Sign Up', style: TextStyle(fontSize: 18)),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
             ],
           ),
         ],
