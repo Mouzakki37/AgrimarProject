@@ -93,6 +93,10 @@ flutter:
     - assets/images/logo.png
     - assets/images/LandingScreenBackground.png
     - assets/icon/google.png
+    - assets/images/plant_diagnosis.png
+    - assets/images/step1.png
+    - assets/images/step2.png
+    - assets/images/step3.png
 
 
 
